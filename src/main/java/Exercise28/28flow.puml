@@ -1,0 +1,19 @@
+@startuml
+
+class EnterAValue{
+    +Valid()
+    +Invalid()
+}
+
+EnterAValue --|> Valid
+EnterAValue --|> Invalid
+
+Valid ---|> DoYouWantToEnterAnother
+Invalid ---|> EnterAnInteger
+
+DoYouWantToEnterAnother --|> Yes
+DoYouWantToEnterAnother --|> No
+
+EnterAnInteger --|> EnterAValue
+Yes --|> EnterAValue
+@enduml
